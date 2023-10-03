@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "title": "Grand Theft Auto V",
+      "genres": "Acton, Adventure",
+      "description": "Juego de mundo abierto en el que los jugadores asumen roles criminales en la ficticia Los Santos.",
+      "price": 100,
+      "imageUrl": "https://media.rawg.io/media/crop/600/400/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+      "width": 536,
+      "height": 536
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "genres": "Acton, Adventure, RPG",
+      "description": "Juego de rol que sigue al cazador de monstruos Geralt de Rivia en una aventura con una trama profunda y elecciones morales.",
+      "price": 100,
+      "imageUrl": "https://media.rawg.io/media/crop/600/400/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+      "width": 536,
+      "height": 536
+    },
+    {
+      "title": "Read Dead Redemption 2",
+      "genres": "Acton, Adventure",
+      "description": "Ambientado en el Salvaje Oeste, sigues a Arthur Morgan, un forajido, en una historia con atención al detalle y personajes memorables.",
+      "price": 100,
+      "imageUrl": "https://media.rawg.io/media/crop/600/400/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+      "width": 536,
+      "height": 536
+    },
+    {
+      "title": "God of War (2018)",
+      "genres": "Acton, Adventure, RPG",
+      "description": "Un reinicio de la saga con Kratos en la mitología nórdica, destacando por su narrativa madura y gráficos impresionantes.",
+      "price": 100,
+      "imageUrl": "https://media.rawg.io/media/crop/600/400/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+      "width": 536,
+      "height": 536
+    },
+    {
+      "title": "The Last Of Us",
+      "genres": "Acton, Adventure",
+      "description": " En un mundo postapocalíptico, sigues a Joel y Ellie mientras luchan por sobrevivir, centrándose en la narrativa y las relaciones humanas en un entorno desolado.",
+      "price": 100,
+      "imageUrl": "https://media.rawg.io/media/crop/600/400/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg",
+      "width": 536,
+      "height": 536
+    }
+  ]
+}

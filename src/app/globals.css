@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-gray-800;
+    @apply text-white;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .background-btn-form {
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+  }
+  .background-btn-form:hover {
+    background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+  }
+  .background-img-form {
+    background-image: url('https://community.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg');
+  }
+  .programmer-card {
+    transform-style: preserve-3d;
+  }
 }
