@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchSvg } from '../assets/icons/AllSvgs'
+import { SearchSvg } from '@/app/assets/icons/AllSvgs'
 
 
 function Search() {

@@ -1,8 +1,8 @@
 import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import logo from "../../../public/logo.png";
-import Search from "../components/Search";
+import Search from "@/components/Search";
 import { StyledTooltip } from "../styles/StyledTooltip";
 import { Badge, IconButton } from "@mui/material";
 import { AdjustmentsSvg, CartSvg } from "../assets/icons/AllSvgs";
