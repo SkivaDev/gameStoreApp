@@ -1,6 +1,9 @@
+'use client';
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Duru_Sans } from "next/font/google";
+import useUsers from "@/hooks/useUsers";
 
 const duru_sans = Duru_Sans({
   weight: "400",
@@ -9,6 +12,24 @@ const duru_sans = Duru_Sans({
 });
 
 function page() {
+
+  const { validateUser } = useUsers();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const user = validateUser(email, password);
+    if (!user) {
+      alert("Usuario no encontrado");
+      return;
+    }
+    alert("Usuario encontrado");
+  }
+
+
   return (
     <main className="mt-[9.375rem]">
       <div className="w-full flex  justify-center items-center background-img-form h-[43.75rem]">
@@ -26,6 +47,8 @@ function page() {
                 <input
                   type="email"
                   className="rounded-[.125rem] p-[.625rem] outline-none text-[.9375rem] text-black"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                 />
               </div>
 
@@ -39,12 +62,15 @@ function page() {
                 <input
                   type="password"
                   className="rounded-[.125rem] p-[.625rem] outline-none text-[.9375rem] text-black"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                 />
               </div>
 
               <button
                 type="submit"
                 className="w-[16.875rem] mx-auto p-[.75rem] text-center background-btn-form"
+                onClick={handleLogin}
               >
                 Ingresar
               </button>

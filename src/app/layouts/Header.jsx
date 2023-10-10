@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Navbar from "@/components/Navbar";
 import logo from "../../../public/logo.png";
@@ -7,8 +9,21 @@ import { StyledTooltip } from "../styles/StyledTooltip";
 import { Badge, IconButton } from "@mui/material";
 import { AdjustmentsSvg, CartSvg } from "../assets/icons/AllSvgs";
 import Link from "next/link";
+import useUsers from "@/hooks/useUsers";
 
 function Header() {
+
+  const { isLogined, loginedUser } = useUsers();
+
+  const [usuarioLogeado, setUsuarioLogeado] = useState({})
+
+  useEffect(() => {
+    setUsuarioLogeado(loginedUser)
+    alert("cambio el estado de logeo " + isLogined )
+  }, [isLogined])
+  
+
+
   return (
     <header className="fixed top-0 left-0 flex justify-between gap-[8.125rem] w-full h-[3.125rem] z-50 bg-black-light">
       <section className="flex items-center gap-[1.25rem] ">
@@ -40,9 +55,16 @@ function Header() {
             </Badge>
           </IconButton>
         </StyledTooltip>
-        <button type="button" className="text-[.8125rem] px-[.625rem] py-[.375rem] bg-primary-main rounded-[.4375rem] hover:bg-primary-dark">
+            {isLogined ? 
+            (<div className="flex items-center">{loginedUser.name} {loginedUser.lastName}</div>)
+            :(
+            <button type="button" className="text-[.8125rem] px-[.625rem] py-[.375rem] bg-primary-main rounded-[.4375rem] hover:bg-primary-dark">
           <Link href={'/login'}>Login</Link>
         </button>
+        )}
+
+
+        
       </section>
     </header>
   );
