@@ -5,36 +5,43 @@ import { Duru_Sans } from "next/font/google";
 import Link from "next/link";
 import { users } from "@/app/data/dataExample";
 import useUsers from "@/hooks/useUsers";
+import { useAuth } from "@/hooks/auth";
+import { InputError } from "@/components";
 
 const duru_sans = Duru_Sans({
   weight: "400",
   styles: ["normal", "italic"],
   subsets: ["latin"],
 });
+
 function registerPage() {
+  const { register } = useAuth({
+    middleware: "guest",
+    redirectIfAuthenticated: "/dashboard",
+  });
 
-  const { totalUsers, addUser, users } = useUsers();
-
-  const [country, setCountry] = React.useState("Peru");
-  const [name, setName] = useState("");
+  const [country, setCountry] = useState('')
   const [lastName, setLastName] = useState("");
+
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [errors, setErrors] = useState([]);
 
+  const submitForm = (event) => {
+    event.preventDefault();
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-      country,
+    register({
       name,
-      lastName,
       email,
       password,
-    };
-    console.log(data);
-    addUser(data);
-    alert("Usuario registrado");
+      password_confirmation: passwordConfirmation,
+      
+      country,
+      last_name: lastName,
+      setErrors,
+    });
   };
 
   return (
@@ -43,9 +50,11 @@ function registerPage() {
         <div className="flex flex-col justify-center items-center gap-[.9375rem]">
           <h1 className="self-start text-xl">Registrase</h1>
           <div className="px-[2rem] py-[1.5rem] bg-black-form w-[25rem] rounded-[.4375rem]">
-            <form action="" className="flex flex-col gap-[.75rem] w-full"
-             onSubmit={handleSubmit}
+            <form
+              className="flex flex-col gap-[.75rem] w-full"
+              onSubmit={submitForm}
             >
+              {/* Country */}
               <div className="flex flex-col">
                 <label
                   htmlFor="country"
@@ -69,6 +78,7 @@ function registerPage() {
               </div>
 
               <div className="flex w-full justify-between">
+                {/* Name */}
                 <div className="flex flex-col w-[47%]">
                   <label
                     htmlFor="name"
@@ -76,6 +86,7 @@ function registerPage() {
                   >
                     Nombre
                   </label>
+
                   <input
                     id="name"
                     type="text"
@@ -84,8 +95,14 @@ function registerPage() {
                     placeholder="Ingresa tu nombre"
                     onChange={(e) => setName(e.target.value)}
                     value={name}
+                    required
+                    autoFocus
                   />
+
+                  <InputError messages={errors.name} className="mt-2" />
                 </div>
+
+                {/* Last Name */}
                 <div className="flex flex-col w-[47%]">
                   <label
                     htmlFor="lastName"
@@ -104,6 +121,7 @@ function registerPage() {
                 </div>
               </div>
 
+              {/* Email Address */}
               <div className="flex flex-col">
                 <label
                   htmlFor="email"
@@ -111,6 +129,7 @@ function registerPage() {
                 >
                   CORREO
                 </label>
+
                 <input
                   id="email"
                   type="email"
@@ -118,9 +137,11 @@ function registerPage() {
                   placeholder="correo@gmail.com"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
+                  required
                 />
               </div>
 
+              {/* Password */}
               <div className="flex flex-col">
                 <label
                   htmlFor="password"
@@ -128,26 +149,39 @@ function registerPage() {
                 >
                   CONTRASEÑA
                 </label>
+
                 <input
                   id="password"
                   type="password"
                   className="rounded-[.125rem] p-[.625rem] outline-none text-[.9375rem] text-black"
                   onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  required
+                  autoComplete="new-password"
                 />
+
+                <InputError messages={errors.password} className="mt-2" />
               </div>
 
+              {/* Confirm Password */}
               <div className="flex flex-col">
                 <label
-                  htmlFor="repassword"
+                  htmlFor="passwordConfirmation"
                   className={`${duru_sans.className} text-blue uppercase text-[12px]`}
                 >
                   REPETIR CONTRASEÑA
                 </label>
+
                 <input
-                  id="repassword"
+                  id="passwordConfirmation"
                   type="password"
                   className="rounded-[.125rem] p-[.625rem] outline-none text-[.9375rem] text-black"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  required
                 />
+
+                <InputError messages={errors.password_confirmation} className="mt-2" />
               </div>
 
               <button

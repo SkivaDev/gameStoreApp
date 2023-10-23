@@ -6,19 +6,13 @@ import useUsers from '@/hooks/useUsers';
 
 export default async function Home() {
 
-  // const params = {
-  //   genres: "indie"
-  // }
-
-  // const response = await rawgApi.getGamesList({
-  //   params
-  // });
-  // // console.log(response)
+  // const response = await rawgApi.getGamesList();
+  // console.log(response)
   // const allGames = response.results;
 
   // const response2 = await rawgApi.genres();
   // const allGenres = response2.results;
-
+console.log("xd")
   const response = await rawgApi.getGamesList({
     params: {
       genres: "action"

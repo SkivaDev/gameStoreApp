@@ -10,6 +10,7 @@ import { Badge, IconButton } from "@mui/material";
 import { AdjustmentsSvg, CartSvg } from "../assets/icons/AllSvgs";
 import Link from "next/link";
 import useUsers from "@/hooks/useUsers";
+import { useAuth } from "@/hooks/auth";
 
 function Header() {
 
@@ -17,11 +18,13 @@ function Header() {
 
   const [usuarioLogeado, setUsuarioLogeado] = useState({})
 
-  useEffect(() => {
-    setUsuarioLogeado(loginedUser)
-    alert("cambio el estado de logeo " + isLogined )
-  }, [isLogined])
+  // useEffect(() => {
+  //   setUsuarioLogeado(loginedUser)
+  //   alert("cambio el estado de logeo " + isLogined )
+  // }, [isLogined])
   
+  
+  const { user } = useAuth({ middleware: 'auth' })
 
 
   return (
@@ -55,8 +58,8 @@ function Header() {
             </Badge>
           </IconButton>
         </StyledTooltip>
-            {isLogined ? 
-            (<div className="flex items-center">{loginedUser.name} {loginedUser.lastName}</div>)
+            {user ? 
+            (<div className="flex items-center">{user?.name}</div>)
             :(
             <button type="button" className="text-[.8125rem] px-[.625rem] py-[.375rem] bg-primary-main rounded-[.4375rem] hover:bg-primary-dark">
           <Link href={'/login'}>Login</Link>

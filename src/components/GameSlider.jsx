@@ -95,7 +95,7 @@ const GameSlider = ({ heading, category, gamesList }) => {
         className=''
       >
         {gamesList.map((game, index) => (
-          <SwiperSlide key={index} className='h-[100px]'>
+          <SwiperSlide key={index} className='h-full'>
             <GameCard category={category} game={game}/>
           </SwiperSlide>
         ))}
