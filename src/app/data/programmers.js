@@ -1,5 +1,4 @@
-{
-  "programmers": [
+  export const programmers = [
     {
       "name": "Fabrizio Ortiz",
       "rol": "Implementador",
@@ -41,4 +40,3 @@
       "height": 536
     }
   ]
-}

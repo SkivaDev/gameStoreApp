@@ -1,9 +1,9 @@
 import React from "react";
-import { programmers } from "@/app/data/programmers.json";
 
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { programmers } from "@/app/data/programmers";
 
 function aboutPage() {
   return (

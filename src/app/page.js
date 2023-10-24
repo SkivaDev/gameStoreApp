@@ -1,7 +1,7 @@
-import { games } from '@/app/data/games'
+// import { games } from '@/app/data/games'
 import rawgApi from './api/rawgApi'
 import { users } from './data/dataExample';
-import { GameSlider, GameCard, ShowUsersTest } from '@/components';
+import { GameSlider, GameCard, ShowUsersTest, TestComponentClient, Carousel } from '@/components';
 import useUsers from '@/hooks/useUsers';
 
 export default async function Home() {
@@ -14,9 +14,7 @@ export default async function Home() {
   // const allGenres = response2.results;
 console.log("xd")
   const response = await rawgApi.getGamesList({
-    params: {
-      genres: "action"
-    }
+    genres: "action"
   });
 
   const actionGames = response.results;
@@ -38,23 +36,26 @@ console.log("xd")
   const casualGames = response3.results;
 
   const response4 = await rawgApi.getGamesList({
-    params: {
-      genres: "educational"
-    }
+    genres: "educational"
   });
 
   const educationalGames = response4.results;
 
 
 
+
+
+
   return (
     <main className="mt-[5rem] mb-[1.875rem] mx-auto pl-[3.4375rem] max-w-[100rem]">
+      <Carousel/>
       <h1 className='px-[1.875rem] text-[2.8125rem] uppercase mb-[1.875rem]'>Catalogo:</h1>
       {/* <div className='flex flex-wrap justify-center px-[1.875rem] gap-[1.5625rem]'>
         {allGames.map((game, i) => (
           <GameCard key={i} game={game} />
         ))}
       </div> */}
+      <TestComponentClient />
       <GameSlider heading={'Juegos de Accion'} category={'action'} gamesList={actionGames}/>
       <GameSlider heading={'Juegos de Aventura'} category={'action'} gamesList={adventureGames}/>
       <GameSlider heading={'Juegos Casuales'} category={'action'} gamesList={casualGames}/>

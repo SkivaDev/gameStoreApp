@@ -23,8 +23,12 @@ function Header() {
   //   alert("cambio el estado de logeo " + isLogined )
   // }, [isLogined])
   
-  
-  const { user } = useAuth({ middleware: 'auth' })
+  const user = {
+    name: "Rohan Shrestha",
+    email: "roga@gaa.com"
+  }
+
+  // const { user } = useAuth({ middleware: 'auth' })
 
 
   return (
