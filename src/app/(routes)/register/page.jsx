@@ -17,7 +17,7 @@ const duru_sans = Duru_Sans({
 function registerPage() {
   const { register } = useAuth({
     middleware: "guest",
-    redirectIfAuthenticated: "/dashboard",
+    redirectIfAuthenticated: "/",
   });
 
   const [country, setCountry] = useState('')

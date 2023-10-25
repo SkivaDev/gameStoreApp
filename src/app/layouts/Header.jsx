@@ -11,6 +11,7 @@ import { AdjustmentsSvg, CartSvg } from "../assets/icons/AllSvgs";
 import Link from "next/link";
 import useUsers from "@/hooks/useUsers";
 import { useAuth } from "@/hooks/auth";
+import { Profile } from "@/components";
 
 function Header() {
 
@@ -23,12 +24,12 @@ function Header() {
   //   alert("cambio el estado de logeo " + isLogined )
   // }, [isLogined])
   
-  const user = {
-    name: "Rohan Shrestha",
-    email: "roga@gaa.com"
-  }
+  // const user = {
+  //   name: "Rohan Shrestha",
+  //   email: "roga@gaa.com"
+  // }
 
-  // const { user } = useAuth({ middleware: 'auth' })
+  const { user, logout } = useAuth({ middleware: 'guest' })
 
 
   return (
@@ -63,7 +64,7 @@ function Header() {
           </IconButton>
         </StyledTooltip>
             {user ? 
-            (<div className="flex items-center">{user?.name}</div>)
+            (<Profile user={user} logout={logout}/>)
             :(
             <button type="button" className="text-[.8125rem] px-[.625rem] py-[.375rem] bg-primary-main rounded-[.4375rem] hover:bg-primary-dark">
           <Link href={'/login'}>Login</Link>

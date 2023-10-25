@@ -12,6 +12,7 @@ import { CircularScoreProgress } from "./CircularScoreProgress";
 import Carousel from "./Carousel";
 import CarouselProgress from "./CarouselProgress";
 import CarouselSlider from "./CarouselSlider";
+import Profile from "./Profile";
 
 export {
   TestComponentClient,
@@ -28,6 +29,7 @@ export {
   Carousel,
   CarouselProgress,
   CarouselSlider,
+  Profile,
 
   AuthSessionStatus
 }

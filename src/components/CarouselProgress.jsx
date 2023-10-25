@@ -29,7 +29,7 @@ const CarouselProgress = ({ featured }) => {
             <figure
               key={game.id}
               // onClick={clickHandler.bind(null, i)}
-              className={`relative flex items-center gap-[15px] rounded-[3px] overflow-hidden h-[80px] cursor-pointer`}
+              className={`relative flex items-center gap-[15px] px-[15px] rounded-[3px] overflow-hidden h-[80px] cursor-pointer hover:bg-grey-dark`}
             >
               <img
                 srcSet={`${game.background_image}`}

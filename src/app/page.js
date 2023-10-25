@@ -55,11 +55,11 @@ console.log("xd")
           <GameCard key={i} game={game} />
         ))}
       </div> */}
-      <TestComponentClient />
+      {/* <TestComponentClient /> */}
       <GameSlider heading={'Juegos de Accion'} category={'action'} gamesList={actionGames}/>
-      <GameSlider heading={'Juegos de Aventura'} category={'action'} gamesList={adventureGames}/>
-      <GameSlider heading={'Juegos Casuales'} category={'action'} gamesList={casualGames}/>
-      <GameSlider heading={'Juegos de Educacion'} category={'action'} gamesList={educationalGames}/>
+      <GameSlider heading={'Juegos de Aventura'} category={'adventure'} gamesList={adventureGames}/>
+      <GameSlider heading={'Juegos Casuales'} category={'casual'} gamesList={casualGames}/>
+      <GameSlider heading={'Juegos de Educacion'} category={'educational'} gamesList={educationalGames}/>
       <ShowUsersTest />
     </main>
   )
