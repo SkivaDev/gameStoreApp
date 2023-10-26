@@ -13,6 +13,7 @@ import Carousel from "./Carousel";
 import CarouselProgress from "./CarouselProgress";
 import CarouselSlider from "./CarouselSlider";
 import Profile from "./Profile";
+import MapComponent from "./MapComponent";
 
 export {
   TestComponentClient,
@@ -30,6 +31,7 @@ export {
   CarouselProgress,
   CarouselSlider,
   Profile,
+  MapComponent,
 
   AuthSessionStatus
 }
