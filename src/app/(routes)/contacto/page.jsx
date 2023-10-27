@@ -1,16 +1,12 @@
-'use client';
-
+"use client";
 
 import React from "react";
-import { MapComponent } from "@/components";
+import { ContactForm, MapComponent } from "@/components";
 
 function ContactPage() {
-
-
-
   return (
-    <main className="mt-[5rem] mb-[1.875rem] mx-auto pl-[3.4375rem] max-w-[100rem]">
-      <div className="p-y-[1.875rem] text-center">
+    <main className="pt-[5rem] mx-auto pl-[3.4375rem] max-w-[100rem] h-screen">
+      {/* <div className="p-y-[1.875rem] text-center">
         <h1 className="font-bold text-[2.5rem]">Como podemos ayudarte?</h1>
       </div>
 
@@ -39,10 +35,12 @@ function ContactPage() {
           
           <p>Need help with setting up or troubleshooting your new purchase?</p>
         </div>
-      </div>
+      </div> */}
 
-      <div className="">
+      <div className="relative mt-[8.125rem] max-w-full rounded-lg">
         <MapComponent />
+
+        <ContactForm />
       </div>
     </main>
   );

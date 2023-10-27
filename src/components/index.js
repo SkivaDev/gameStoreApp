@@ -14,6 +14,7 @@ import CarouselProgress from "./CarouselProgress";
 import CarouselSlider from "./CarouselSlider";
 import Profile from "./Profile";
 import MapComponent from "./MapComponent";
+import ContactForm from "./ContactForm";
 
 export {
   TestComponentClient,
@@ -32,6 +33,7 @@ export {
   CarouselSlider,
   Profile,
   MapComponent,
+  ContactForm,
 
   AuthSessionStatus
 }
