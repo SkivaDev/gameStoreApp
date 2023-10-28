@@ -1,9 +1,8 @@
-@import url('https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css');
+@import url("https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 .leaflet-container {
   width: 100%;
@@ -19,26 +18,56 @@
 
 @layer components {
   .background-btn-form {
-    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    background: linear-gradient(90deg, #06bfff 0%, #2d73ff 100%);
   }
   .background-btn-form:hover {
-    background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+    background: linear-gradient(90deg, #06bfff 30%, #2d73ff 100%);
   }
   .background-img-form {
-    background-image: url('https://community.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg');
+    background-image: url("https://community.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg");
   }
   .programmer-card {
     transform-style: preserve-3d;
   }
 
   .background-btn-contact-form {
-    background: linear-gradient(260deg, rgba(247,79,119,1) 0%, rgba(255,173,58,1) 57%, rgba(255,173,58,1) 100%);
+    background: linear-gradient(
+      260deg,
+      rgba(247, 79, 119, 1) 0%,
+      rgba(255, 173, 58, 1) 57%,
+      rgba(255, 173, 58, 1) 100%
+    );
   }
 
   .box-shadow-default {
-    box-shadow: 12px 12px 24px -3px rgba(0, 0, 0, 0.41)
+    box-shadow: 12px 12px 24px -3px rgba(0, 0, 0, 0.41);
   }
 
+  .game-platforms_container svg {
+    @apply h-[1.25rem] w-[1.25rem] fill-white;
+  }
+
+  .carousel-progress__figure-active {
+    @apply bg-grey-dark;
+  }
+
+  .carousel-progress__figure-active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    animation: progress 7s linear;
+    @apply bg-grey-main;
+  }
+
+  @keyframes progress {
+    100% {
+      transform: translateX(0);
+    }
+  }
   /* sizing of map container */
 
   /* .leaflet-container {

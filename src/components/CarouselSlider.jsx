@@ -1,8 +1,8 @@
 'use client' 
 import { useGamesData } from '@/hooks/useGamesData';
-import { Skeleton } from '@mui/material';
+import { Rating, Skeleton } from '@mui/material';
 import React from 'react'
-import { CircularScoreProgress } from '.';
+import { CircularScoreProgress, GamePlatforms } from '.';
 
 const CarouselSlider = ({active, featured}) => {
 
@@ -46,8 +46,11 @@ const CarouselSlider = ({active, featured}) => {
                 className={'h-full w-full object-cover rounded-[3px] brightness-[60%]'}
               />
             </picture>
-            {/* <figcaption className={classes['carousel-slider__caption']}>
-              <h1 className={classes['caption__header']}>{game.name}</h1>
+
+
+
+            <figcaption className={'absolute left-10 bottom-10 flex flex-col gap-[10px]'}>
+              <h1 className={'text-[1.375rem] font-medium'}>{game.name}</h1>
               <Rating
                 name={game.slug}
                 value={game.rating}
@@ -55,18 +58,19 @@ const CarouselSlider = ({active, featured}) => {
                 size="large"
                 readOnly
                 sx={{ '& .MuiRating-icon': { color: 'inherit' } }}
-                className={classes['caption__rating']}
+                className={''}
               />
-              <div className={classes['caption__platforms']}>
+              <div className={'flex gap-[16px] ml-[5px] game-platforms_container'}>
                 <GamePlatforms platforms={game.platforms} />
               </div>
-              <div className={classes['caption__genre']}>
-                Genre:&emsp;{game.genres.map(genre => genre.name).join(', ')}
+              <div className={'mt-[20px] line-clamp-1 overflow-hidden'}>
+                {/* Genre:&emsp;{game.genres.map(genre => genre.name).join(', ')} */}Genre:
               </div>
-              <div className={classes['caption__release']}>
-                Release Date:&emsp;{game.released}
+              <div className={''}>
+                {/* Release Date:&emsp;{game.released} */}
+                Release Date:
               </div>
-              {pricesIsLoading ? (
+              {/* {pricesIsLoading ? (
                 <div>Loading...</div>
               ) : (
                 <>
@@ -82,9 +86,10 @@ const CarouselSlider = ({active, featured}) => {
                   />
                   <BookmarksButton game={game} prices={prices?.[i].list[0]} />
                 </>
-              )}
+              )} */}
             </figcaption>
-            {!matches && (
+
+            {/* {!matches && (
               <div className={classes['screenshots']}>
                 <span className={classes['scenes-text']}>Scenes</span>
                 <div className={classes['clip-btn']}></div>

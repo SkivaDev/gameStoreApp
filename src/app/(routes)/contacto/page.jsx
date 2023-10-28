@@ -38,7 +38,7 @@ function ContactPage() {
       </div> */}
 
       <div className="relative mt-[8.125rem] max-w-full rounded-lg">
-        <MapComponent />
+        {/* <MapComponent /> */}
 
         <ContactForm />
       </div>

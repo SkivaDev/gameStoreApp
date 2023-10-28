@@ -15,6 +15,7 @@ import CarouselSlider from "./CarouselSlider";
 import Profile from "./Profile";
 import MapComponent from "./MapComponent";
 import ContactForm from "./ContactForm";
+import GamePlatforms from "./GamePlatforms";
 
 export {
   TestComponentClient,
@@ -34,6 +35,7 @@ export {
   Profile,
   MapComponent,
   ContactForm,
+  GamePlatforms,
 
   AuthSessionStatus
 }
