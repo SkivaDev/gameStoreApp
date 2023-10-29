@@ -64,11 +64,10 @@ const CarouselSlider = ({active, featured}) => {
                 <GamePlatforms platforms={game.platforms} />
               </div>
               <div className={'mt-[20px] line-clamp-1 overflow-hidden'}>
-                {/* Genre:&emsp;{game.genres.map(genre => genre.name).join(', ')} */}Genre:
+                Genre:&emsp;{game.genres.map(genre => genre.name).join(', ')}
               </div>
               <div className={''}>
-                {/* Release Date:&emsp;{game.released} */}
-                Release Date:
+                Release Date:&emsp;{game.released}
               </div>
               {/* {pricesIsLoading ? (
                 <div>Loading...</div>

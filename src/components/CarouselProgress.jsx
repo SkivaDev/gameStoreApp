@@ -6,7 +6,9 @@ import React from "react";
 const CarouselProgress = ({ active, featured }) => {
   const { games, gamesIsLoading } = useGamesData();
 
-  console.log(featured);
+  //s
+  console.log(featured); 
+
 
   return (
     <div className={"flex flex-col justify-between w-[300px]"}>
