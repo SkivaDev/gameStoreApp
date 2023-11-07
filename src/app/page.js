@@ -1,7 +1,7 @@
 // import { games } from '@/app/data/games'
 import rawgApi from './api/rawgApi'
 import { users } from './data/dataExample';
-import { GameSlider, GameCard, ShowUsersTest, TestComponentClient, Carousel } from '@/components';
+import { GameCard, ShowUsersTest, TestComponentClient, Carousel, GamesSlider } from '@/components';
 import useUsers from '@/hooks/useUsers';
 
 export default async function Home() {
@@ -56,10 +56,10 @@ console.log("xd")
         ))}
       </div> */}
       {/* <TestComponentClient /> */}
-      <GameSlider heading={'Juegos de Accion'} category={'action'} gamesList={actionGames}/>
-      <GameSlider heading={'Juegos de Aventura'} category={'adventure'} gamesList={adventureGames}/>
-      <GameSlider heading={'Juegos Casuales'} category={'casual'} gamesList={casualGames}/>
-      <GameSlider heading={'Juegos de Educacion'} category={'educational'} gamesList={educationalGames}/>
+      <GamesSlider heading={'Juegos de Accion'} category={'action'} gamesList={actionGames}/>
+      <GamesSlider heading={'Juegos de Aventura'} category={'adventure'} gamesList={adventureGames}/>
+      <GamesSlider heading={'Juegos Casuales'} category={'casual'} gamesList={casualGames}/>
+      <GamesSlider heading={'Juegos de Educacion'} category={'educational'} gamesList={educationalGames}/>
       <ShowUsersTest />
     </main>
   )

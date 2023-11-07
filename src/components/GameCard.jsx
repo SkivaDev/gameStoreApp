@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function GameCard({ game }) {
@@ -20,6 +21,11 @@ function GameCard({ game }) {
         <button className="bg-red hover:bg-opacity-80 p-[.5rem] mt-[.6875rem]">Comprar</button>
       </div>
     </div>
+    // <div>
+    //   <Image>
+        
+    //   </Image>
+    // </div>
   );
 }
 

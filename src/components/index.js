@@ -1,7 +1,7 @@
 import TestComponentClient from "./TestComponentClient";
 
 import GameCard from "./GameCard";
-import GameSlider from "./GameSlider";
+import GamesSlider from "./GamesSlider";
 import HeroSection from "./HeroSection";
 import InputError from "./InputError";
 import Navbar from "./Navbar";
@@ -23,7 +23,7 @@ export {
   
   
   GameCard,
-  GameSlider,
+  GamesSlider,
   HeroSection,
   Navbar,
   Search,

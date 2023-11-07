@@ -90,6 +90,35 @@ export const useGamesData = (category, page = 1, searchQuery = null) => {
 
   let pricesList = Object.values(pricesData?.data || {});
   
+
+  // const {
+  //   data: mitest,
+  //   isLoading: testIsLoading,
+  //   error: testError,
+  // } = useQuery({
+  //   queryKey: ["games", category, page, searchQuery],
+  //   queryFn: async () => {
+  //     const apiKey = process.env.NEXT_APP_API_KEY;
+  //     const url = "games";
+
+
+  //     return fetch(
+  //       `https://api.rawg.io/api/games?key=f9b0cbf9260e4d5386f4a0d2889f69af`
+  //     ).then((res) => res.json());
+  //   },
+  //   // queryFn: async () => {
+  //   //   const url = "games";
+  //   //   const result = await axiosClient.get(url, {
+  //   //     params: {
+  //   //       key: process.env.NEXT_APP_API_KEY,
+  //   //     }
+  //   //   });
+  //   //   console.log("aki", result)
+  //   //   return result;
+  //   // },
+  //   // enabled: !!category && !!page,
+  // });
+
   return {
     games,
     gamesIsLoading,

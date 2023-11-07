@@ -14,7 +14,7 @@ import 'swiper/css/navigation';
 import { GameCard } from '.';
 import apiConfig from '@/app/api/apiConfig';
 
-const GameSlider = ({ heading, category, gamesList }) => {
+const GamesSlider = ({ heading, category, gamesList }) => {
 
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
@@ -104,4 +104,4 @@ const GameSlider = ({ heading, category, gamesList }) => {
   )
 }
 
-export default GameSlider
+export default GamesSlider
