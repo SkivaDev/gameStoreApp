@@ -15,6 +15,7 @@ function GameCard({ game }) {
           </p>
           <div className="flex justify-between">
             <p>Free</p>
+            
             <span>i i i</span>
           </div>
         </div>
