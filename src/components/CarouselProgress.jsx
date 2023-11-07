@@ -3,7 +3,7 @@ import { useGamesData } from "@/hooks/useGamesData";
 import { Skeleton } from "@mui/material";
 import React from "react";
 
-const CarouselProgress = ({ active, featured }) => {
+const CarouselProgress = ({ active, featured, clickHandler }) => {
   const { games, gamesIsLoading } = useGamesData();
 
   //s
@@ -28,7 +28,7 @@ const CarouselProgress = ({ active, featured }) => {
         : featured.map((game, i) => (
             <figure
               key={game.id}
-              // onClick={clickHandler.bind(null, i)}
+              onClick={clickHandler.bind(null, i)}
               className={`relative flex items-center gap-[15px] px-[15px] rounded-[3px] overflow-hidden h-[80px] cursor-pointer hover:bg-grey-dark ${
                 i === active ? "carousel-progress__figure-active" : ""
               }`}

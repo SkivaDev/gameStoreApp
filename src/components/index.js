@@ -16,6 +16,7 @@ import Profile from "./Profile";
 import MapComponent from "./MapComponent";
 import ContactForm from "./ContactForm";
 import GamePlatforms from "./GamePlatforms";
+import GamePrice from "./GamePrice";
 
 export {
   TestComponentClient,
@@ -36,6 +37,7 @@ export {
   MapComponent,
   ContactForm,
   GamePlatforms,
-
+  GamePrice,
+  
   AuthSessionStatus
 }

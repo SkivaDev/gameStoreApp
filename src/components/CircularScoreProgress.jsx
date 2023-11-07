@@ -1,3 +1,5 @@
+import { CircularProgress } from "@mui/material";
+
 export const CircularScoreProgress = props => (
   <div
     style={{

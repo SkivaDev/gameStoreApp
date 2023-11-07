@@ -2,12 +2,15 @@
 import { useGamesData } from '@/hooks/useGamesData';
 import { Rating, Skeleton } from '@mui/material';
 import React from 'react'
-import { CircularScoreProgress, GamePlatforms } from '.';
+import { CircularScoreProgress, GamePlatforms, GamePrice } from '.';
 
-const CarouselSlider = ({active, featured}) => {
+const CarouselSlider = ({active, featured, prices}) => {
 
-  const { games, gamesIsLoading } = useGamesData();
+  const { pricesIsLoading, gamesIsLoading } = useGamesData();
 
+  console.log(prices);
+
+  console.log(featured)
   return (
     <div className={'relative h-[75vh] w-full'}>
       {gamesIsLoading ? (
@@ -29,9 +32,9 @@ const CarouselSlider = ({active, featured}) => {
             //     );
             // }}
           >
-            {game.metacriticScore && (
+            {game.metacritic && (
               <div className={'absolute top-[40px] left-[40px] z-20 rounded-[50%]'}>
-                <CircularScoreProgress value={game.metacriticScore} />
+                <CircularScoreProgress value={game.metacritic} />
               </div>
             )}
             <picture>
@@ -69,7 +72,7 @@ const CarouselSlider = ({active, featured}) => {
               <div className={''}>
                 Release Date:&emsp;{game.released}
               </div>
-              {/* {pricesIsLoading ? (
+              {pricesIsLoading ? (
                 <div>Loading...</div>
               ) : (
                 <>
@@ -78,14 +81,14 @@ const CarouselSlider = ({active, featured}) => {
                     releaseDate={game.released}
                     variant="carousel-slider__price"
                   />
-                  <ActionButtons
+                  {/* <ActionButtons
                     game={game}
                     prices={prices?.[i].list[0]}
                     variant="carousel-slider__btns"
-                  />
-                  <BookmarksButton game={game} prices={prices?.[i].list[0]} />
+                  /> */}
+                  {/* <BookmarksButton game={game} prices={prices?.[i].list[0]} /> */}
                 </>
-              )} */}
+              )}
             </figcaption>
 
             {/* {!matches && (

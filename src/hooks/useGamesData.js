@@ -76,7 +76,7 @@ export const useGamesData = (category, page = 1, searchQuery = null) => {
   console.log("plains", plains);
 
   const {
-    data: pricesList,
+    data: pricesData,
     isLoading: pricesIsLoading,
     error: pricesError,
   } = useQuery({
@@ -88,13 +88,17 @@ export const useGamesData = (category, page = 1, searchQuery = null) => {
     enabled: !!games && games.length !== 0,
   });
 
+  let pricesList = Object.values(pricesData?.data || {});
+  
   return {
     games,
     gamesIsLoading,
     gamesError,
-    // pricesList,
-    // pricesIsLoading,
-    // pricesError,
+
+    pricesList,
+    pricesIsLoading,
+    pricesError,
+
     gamesCount,
   };
 };

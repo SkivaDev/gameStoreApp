@@ -19,12 +19,13 @@ const randNums = [...Array(6)].map(
 );
 
 const Carousel = () => {
-  const { games, gamesError } = useGamesData();
+  const { games, gamesError, pricesList } = useGamesData();
 
   const featured = games && randNums.map((num) => games[num]);
-  // const prices = pricesList && randNums.map(num => pricesList[num]);
+  const prices = pricesList && randNums.map(num => pricesList[num]);
 
-
+  console.log(games);
+  console.log(pricesList);
 
   const [active, setActive] = useState(activeCarousel);
   const matches = useMediaQuery("(max-width: 600px)");
@@ -51,6 +52,7 @@ const Carousel = () => {
       <CarouselSlider
       active={active} 
       featured={featured} 
+      prices={prices}
       /> 
       {!matches && (
         <CarouselProgress
